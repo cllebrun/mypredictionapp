@@ -349,7 +349,7 @@
             <div class="card p-3 align-center">
                 <div class="wrap">
                         <!-- Display value for churn here-->
-                    <div style= "font-weight: bold; font-size: 50px;" class="mbr-fonts-style" id="churn_num"></div>
+                    <div style= "font-weight: bold; font-size: 40px;" class="mbr-fonts-style" id="churn_num"></div>
 
                 </div>                
             </div>
@@ -404,7 +404,7 @@
                 if(data){
                     console.log(data);
                     // TO COMPLETE
-                    document.getElementById("churn_num").innerHTML = "Yes at " +(data.values[0][17][1]*100).toFixed(1)+ "%";
+                    //document.getElementById("churn_num").innerHTML = "Yes at " + '<value to complete>' + "%";
                 } else{
                     document.getElementById("churn_num").innerHTML = "Data undifined";
                 }
