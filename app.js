@@ -30,7 +30,7 @@ app.use(express.static(__dirname + '/public'));
 ////////////////// PREDICTION ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
- //// ************* Conde snippet to copy *************** ////
+ //// ************* Conde snippet  *************** ////
 
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const btoa = require("btoa");
@@ -111,7 +111,8 @@ app.get("/client/churn", function (request, response) {
               // NOTE: manually define and pass the array(s) of values to be scored in the next line
         const payload = '{"fields": ["Gender", "Status", "Children", "Est Income", "Car Owner", "Age", "LongDistance", "International", "Local", "Dropped", "Paymethod", "LocalBilltype", "LongDistanceBilltype", "Usage", "RatePlan"], "values": [[  '+JSON.stringify(client.gender)+', '+JSON.stringify(client.status)+', '+JSON.stringify(client.children)+','+JSON.stringify(client.est_income)+','+JSON.stringify(client.car_owner)+','+JSON.stringify(client.age)+','+JSON.stringify(client.long_distance)+','+JSON.stringify(client.international)+','+JSON.stringify(client.local)+','+JSON.stringify(client.dropped)+', '+JSON.stringify(client.paymethod)+', '+JSON.stringify(client.local_billtype)+','+JSON.stringify(client.longdistance_billtype)+','+JSON.stringify(client.usage)+', '+JSON.stringify(client.rate_plan)+']]}';
         console.log(payload);
-        const scoring_url = "https://us-south.ml.cloud.ibm.com/v3/wml_instances/76075c55-c628-45c5-9de4-143fbd42238d/deployments/dffb115e-426b-43c5-bc64-608bbacbe7af/online";
+        // TO COMPLETE
+        const scoring_url = "https://us-south.ml.cloud.ibm.com/v3/wml_instances/<yourinstance>/deployments/<yourdeployment>/online";
 
               apiPost(scoring_url, wmlToken, payload, function (resp) {
                   let parsedPostResponse;
